@@ -20,8 +20,12 @@ var IndexVueData = new Vue({
 
     },
     methods:{
+        // addbug:function () {
+        //
+        // },
         bugForm:function (id) {
-            AJAX_JUMP("bugform.html");
+            BUGINFO =IndexVueData.$data.bugTableDataList[id];
+            AJAX_JUMP("bugformEdit.html");
         },
         bugStatEscape:function (bugstat) {
             if(bugstat == "" || bugstat == undefined){
@@ -66,5 +70,7 @@ function InitData_Index() {
 }
 
 function InitEve() {
-
+    $("#addbug").click(function () {
+        AJAX_JUMP("bugform.html");
+    })
 }
