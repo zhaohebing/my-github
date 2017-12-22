@@ -23,6 +23,7 @@ public class PublicController {
     @ResponseBody
     String uploadImg(ReqBo request){
         BufferedOutputStream stream = null;
+
         File path = null;
         try {
             path = new File(ResourceUtils.getURL("classpath:").getPath());
