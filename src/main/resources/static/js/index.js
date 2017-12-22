@@ -7,10 +7,10 @@
  * @type {[*]}
  */
 var TestbugTableDataList =[
-    {id:"11",bugTitle:"登录页面BUG1",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"1",bugFlag:"1",bugSrc:"/src/img.ipg"},
-    {id:"22",bugTitle:"登录页面BUG2",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"2",bugFlag:"0",bugSrc:"/src/img.ipg"},
-    {id:"33",bugTitle:"登录页面BUG3",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"3",bugFlag:"0",bugSrc:""},
-    {id:"44",bugTitle:"登录页面BUG4",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"4",bugFlag:"1",bugSrc:"/src/img.ipg"},
+    {id:"11",bugTitle:"登录页面BUG1",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"1",bugFlag:"1",bugSrc:"/src/img.ipg",bugType:"1"},
+    {id:"22",bugTitle:"登录页面BUG2",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"2",bugFlag:"2",bugSrc:"/src/img.ipg",bugType:"2"},
+    {id:"33",bugTitle:"登录页面BUG3",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"3",bugFlag:"3",bugSrc:"",bugType:"3"},
+    {id:"44",bugTitle:"登录页面BUG4",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"4",bugFlag:"3",bugSrc:"/src/img.ipg",bugType:"1"},
 ]
 var IndexVueData = new Vue({
     el:"#indexVueDivData",

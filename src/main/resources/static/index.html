@@ -235,7 +235,7 @@
                                         创建时间
                                     </td>
                                 </tr>
-                                <tr  v-for="(data,index) in bugTableDataList" :class="data.bugFlag==1?'unread starred':'unread'" @click="bugForm(index)">
+                                <tr  v-for="(data,index) in bugTableDataList" :class="data.bugFlag==3?'unread starred':'unread'" @click="bugForm(index)">
                                     <td class="cell-check">
                                         <input type="checkbox" class="inbox-checkbox">
                                     </td>

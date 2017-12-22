@@ -36,6 +36,12 @@
                     </div>
                 </div>
 
+                <div class = "container">
+                    <img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail" >
+                    <img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail" >
+                    <img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail" >
+                </div>
+
                 <div class="control-group">
                     <label class="control-label" >BUG创建者</label>
                     <div class="controls">
@@ -48,12 +54,12 @@
                     <label class="control-label" >优先级</label>
                     <div class="controls">
                         <div class="dropdown">
-                            <a class="dropdown-toggle btn" data-toggle="dropdown" href="#">一般 <i class="icon-caret-down"></i></a>
-                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                                <li><a href="#">紧急</a></li>
-                                <li><a href="#">重要</a></li>
-                                <li><a href="#">一般</a></li>
-                            </ul>
+                            <a class="dropdown-toggle btn" data-toggle="dropdown"  id="yxjShow">一般 ></i></a>
+                            <!--<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">-->
+                                <!--<li><a href="#" class="yxjchoose">紧急</a></li>-->
+                                <!--<li><a href="#" class="yxjchoose">重要</a></li>-->
+                                <!--<li><a href="#" class="yxjchoose">一般</a></li>-->
+                            <!--</ul>-->
                         </div>
                     </div>
                 </div>
@@ -75,23 +81,29 @@
                     <label class="control-label">BUG类型</label>
                     <div class="controls">
                         <label class="checkbox inline">
-                            <input type="checkbox" value="">
-                            接口
+                            <a href="javascript:" class="checkbox-a" id="bugtypeJK">
+
+                            </a>
+                            <span class="checkbox-word">接口</span>
                         </label>
                         <label class="checkbox inline">
-                            <input type="checkbox" value="">
-                            页面
+                            <a href="javascript:" class="checkbox-a" id="bugtypeYM">
+
+                            </a>
+                            <span class="checkbox-word">页面</span>
                         </label>
                         <label class="checkbox inline">
-                            <input type="checkbox" value="">
-                            需求
+                            <a href="javascript:" class="checkbox-a" id="bugtypeXQ">
+
+                            </a>
+                            <span class="checkbox-word">需求</span>
                         </label>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" >BUG状态</label>
                     <div class="controls">
-                        <select tabindex="1" data-placeholder="待确认" class="span8" >
+                        <select tabindex="1" data-placeholder="待确认" class="span8" id="bugstatselect">
                             <option value="1">待确认</option>
                             <option value="2">解决中</option>
                             <option value="3">已解决</option>
@@ -106,7 +118,7 @@
 
                 <div class="control-group">
                     <div class="controls">
-                        <a class="btn btn-large btn-primary">提交</a>
+                        <a class="btn btn-large btn-primary" >提交</a>
                     </div>
                 </div>
             </form>

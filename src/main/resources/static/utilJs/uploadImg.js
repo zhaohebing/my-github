@@ -17,7 +17,7 @@ function imgUpload(obj) {
 		}
 		addNewContent(imgBox);
 	})
-	$(btn).on('click', function() {
+	$("#bugAddCommit").on('click', function() {
 		if(!limitNum(obj.num)){
 		  	alert("超过限制");
 		  	return false;
