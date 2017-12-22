@@ -1,0 +1,17 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.95.243.36:3306/sfwl
+    username: root
+    password: kissyou012
+  jpa:
+    hibernate:
+      #ddl-auto: create 每次启动根据实体类进行重建表
+      ddl-auto: update
+    show-sql: false
+
+resources:
+  static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
