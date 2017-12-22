@@ -20,6 +20,7 @@ public class UserBug {
     String bugCreater;
     String bugLeader;
     String bugSolver;
+    Integer bugPriority;
 
     @Override
     public String toString() {
@@ -30,6 +31,7 @@ public class UserBug {
                 ", bugCreater='" + bugCreater + '\'' +
                 ", bugLeader='" + bugLeader + '\'' +
                 ", bugSolver='" + bugSolver + '\'' +
+                ", bugPriority=" + bugPriority +
                 '}';
     }
 
@@ -79,5 +81,13 @@ public class UserBug {
 
     public void setBugSolver(String bugSolver) {
         this.bugSolver = bugSolver;
+    }
+
+    public Integer getBugPriority() {
+        return bugPriority;
+    }
+
+    public void setBugPriority(Integer bugPriority) {
+        this.bugPriority = bugPriority;
     }
 }
