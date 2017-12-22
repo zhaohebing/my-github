@@ -3,6 +3,7 @@ package com.mybug.po;
 import javax.persistence.*;
 
 /**
+ * 用户基础表
  * Created by TienChyi on 2017/12/22.
  */
 @Entity
