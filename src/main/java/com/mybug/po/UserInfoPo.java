@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 /**
- * Created by Administrator on 2017/12/22.
+ * Created by TienChyi on 2017/12/22.
  */
 @Entity
 @Table(name = "user_info")
