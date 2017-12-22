@@ -4,33 +4,33 @@ import javax.persistence.*;
 
 /**
  * 用户与bug的关系表
- * Created by Administrator on 2017/12/22.
+ * Created by TienChyi on 2017/12/22.
  */
 @Entity
 @Table(name = "user_bug")
-public class UserBug {
+public class UserBugPo {
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Integer Id;
     @Column(nullable = false)
-    Integer userId;
+    Integer userId;         //user表的用户id
     @Column(nullable = false)
-    String bugId;
+    String bugId;           //bug表的id
     @Column(nullable = false)
-    String bugCreater;
-    String bugLeader;
-    String bugSolver;
-    Integer bugPriority;
+    Integer bugCreaterId;   //bug创建者
+    Integer bugLeaderId;    //bug管理者
+    Integer bugSolverId;    //bug解决者
+    Integer bugPriority;    //bug优先级
 
     @Override
     public String toString() {
-        return "UserBug{" +
+        return "UserBugPo{" +
                 "Id=" + Id +
                 ", userId=" + userId +
                 ", bugId='" + bugId + '\'' +
-                ", bugCreater='" + bugCreater + '\'' +
-                ", bugLeader='" + bugLeader + '\'' +
-                ", bugSolver='" + bugSolver + '\'' +
+                ", bugCreaterId=" + bugCreaterId +
+                ", bugLeaderId=" + bugLeaderId +
+                ", bugSolverId=" + bugSolverId +
                 ", bugPriority=" + bugPriority +
                 '}';
     }
@@ -59,28 +59,28 @@ public class UserBug {
         this.bugId = bugId;
     }
 
-    public String getBugCreater() {
-        return bugCreater;
+    public Integer getBugCreaterId() {
+        return bugCreaterId;
     }
 
-    public void setBugCreater(String bugCreater) {
-        this.bugCreater = bugCreater;
+    public void setBugCreaterId(Integer bugCreaterId) {
+        this.bugCreaterId = bugCreaterId;
     }
 
-    public String getBugLeader() {
-        return bugLeader;
+    public Integer getBugLeaderId() {
+        return bugLeaderId;
     }
 
-    public void setBugLeader(String bugLeader) {
-        this.bugLeader = bugLeader;
+    public void setBugLeaderId(Integer bugLeaderId) {
+        this.bugLeaderId = bugLeaderId;
     }
 
-    public String getBugSolver() {
-        return bugSolver;
+    public Integer getBugSolverId() {
+        return bugSolverId;
     }
 
-    public void setBugSolver(String bugSolver) {
-        this.bugSolver = bugSolver;
+    public void setBugSolverId(Integer bugSolverId) {
+        this.bugSolverId = bugSolverId;
     }
 
     public Integer getBugPriority() {
