@@ -3,11 +3,12 @@
  * Created by nan on 2017/12/22.
  */
 
-
+var TestImgList = [{imgurl:"http://127.0.0.1:8091/images/gz.jpg"},{imgurl:"http://127.0.0.1:8091/images/gz.jpg"}];
 var BugEditVueData = new Vue({
     el:"#bugEditApp",
     data:{
-        bugInfo:{}
+        bugInfo:{},
+        bufImgInfoList:[]
     },
     methods:{
         yxjEx:function (id) {
@@ -52,6 +53,10 @@ var BugEditVueData = new Vue({
                 case "8":
                     return "已关闭";
             }
+        },
+        bugImgView:function (src) {
+            $("#ShowImage_Form").find("#img_show").html("<image src='"+src+"' class='carousel-inner img-responsive img-rounded' />");
+            $("#ShowImage_Form").modal();
         }
     }
 })
@@ -77,9 +82,12 @@ function InitData_Edit() {
     $("#"+bugTypeEx).addClass("active");
 
     $("#bugstatselect").val(buginfo.bugStat);
+
+    BugEditVueData.$data.bufImgInfoList = TestImgList;
 }
 
 $(".checkbox-a").click(function(){
     $(".checkbox-a").removeClass("active");
     $(this).addClass("active")
 })
+

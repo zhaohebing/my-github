@@ -1,4 +1,14 @@
 <link rel="stylesheet" href="css/upImg.css">
+
+<div id="ShowImage_Form" class="modal hide">
+    <div class="modal-header">
+        <button data-dismiss="modal" class="close" type="button"></button>
+    </div>
+    <div class="modal-body">
+        <div id="img_show">
+        </div>
+    </div>
+</div>
 <div class="content">
     <div class="module">
         <div class="module-head">
@@ -36,10 +46,13 @@
                     </div>
                 </div>
 
-                <div class = "container">
-                    <img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail" >
-                    <img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail" >
-                    <img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail" >
+                <div class = "control-group">
+                    <label class="control-label" >BUG截图</label>
+                    <div class="controls">
+                        <!--<img src = "" class="img-thumbnail span8" style="display: none">-->
+                        <img  v-for="data in bufImgInfoList" :src="data.imgurl" class="img-thumbnail span8" @click="bugImgView(data.imgurl)">
+                        <!--<img src = "http://127.0.0.1:8091/images/gz.jpg" class="img-thumbnail span8" @click="bugImgView()">-->
+                    </div>
                 </div>
 
                 <div class="control-group">

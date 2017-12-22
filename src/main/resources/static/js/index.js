@@ -73,4 +73,8 @@ function InitEve() {
     $("#addbug").click(function () {
         AJAX_JUMP("bugform.html");
     })
+    $(".indexMenuJump").click(function () {
+       var jumUrl = $(this).attr("jumpUrl");
+       AJAX_JUMP(jumUrl);
+    });
 }
