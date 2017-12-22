@@ -417,11 +417,11 @@ function ClearLocalStorage() {
 
 
 //会员状态
-function SetMemberStatus(memberStatus) {
-    localStorage.setItem("memberStatus",memberStatus);
+function SetBugInfo(buginfo) {
+    localStorage.setItem("buginfo",buginfo);
 }
-function GetMemberStatus() {
-    return localStorage.getItem("memberStatus");
+function GetBugInfo() {
+    return localStorage.getItem("buginfo");
 }
 //会员类型
 function SetMemberType(memberType) {

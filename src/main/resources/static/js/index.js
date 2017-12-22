@@ -24,7 +24,7 @@ var IndexVueData = new Vue({
         //
         // },
         bugForm:function (id) {
-            BUGINFO =IndexVueData.$data.bugTableDataList[id];
+            SetBugInfo(JSON.stringify(IndexVueData.$data.bugTableDataList[id]));
             AJAX_JUMP("bugformEdit.html");
         },
         bugStatEscape:function (bugstat) {

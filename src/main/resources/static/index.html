@@ -235,7 +235,7 @@
                                         创建时间
                                     </td>
                                 </tr>
-                                <tr  v-for="(data,index) in bugTableDataList" :class="data.bugFlag==1?'unread starred':'unread'" @click="bugForm(data.id)">
+                                <tr  v-for="(data,index) in bugTableDataList" :class="data.bugFlag==1?'unread starred':'unread'" @click="bugForm(index)">
                                     <td class="cell-check">
                                         <input type="checkbox" class="inbox-checkbox">
                                     </td>
@@ -277,7 +277,6 @@
 </div>
 <script src="scripts/jquery-2.2.3.js" type="text/javascript"></script>
 <script src="js/vue.js"></script>
-<script src="js/dataEx.js"></script>
 <script src="js/cross.js"></script>
 <script src="js/index.js"></script>
 <script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
