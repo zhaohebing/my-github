@@ -1,8 +1,6 @@
 package com.mybug.po;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by TienChyi on 2017/12/22.
@@ -11,16 +9,17 @@ import javax.persistence.Table;
 @Table(name = "user_info")
 public class UserInfoPo {
     @javax.persistence.Id
-    Integer Id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer Id;         //主键
     @Column(length = 45)
-    String userName;
+    String userName;    //用户名
     @Column(length = 45)
-    String userPwd;
+    String userPwd;     //用户密码
     @Column(length = 45)
-    String nickName;
+    String nickName;    //用户姓名
     @Column(length = 255)
     String userToken;
-    Integer userType;
+    Integer userType;   //0：普通用户，1：root用户
 
     @Override
     public String toString() {
