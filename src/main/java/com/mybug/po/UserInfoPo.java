@@ -12,15 +12,15 @@ public class UserInfoPo {
     @javax.persistence.Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Integer Id;         //主键
-    @Column(length = 45)
+    @Column(length = 45,nullable = false, unique = true)
     String userName;    //用户名
-    @Column(length = 45)
+    @Column(length = 45,nullable = false)
     String userPwd;     //用户密码
-    @Column(length = 45)
+    @Column(length = 45,nullable = false,unique = true)
     String nickName;    //用户姓名
     @Column(length = 255)
     String userToken;
-    Integer userType;   //0：普通用户，1：root用户
+    Integer userType = 0;   //0：普通用户，1：root用户
 
     @Override
     public String toString() {
