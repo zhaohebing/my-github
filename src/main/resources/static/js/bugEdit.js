@@ -3,6 +3,12 @@
  */
 
 
+var BugEditVueData = new Vue({
+    el:"bugEditApp",
+    data:{
+        bugInfo:{}
+    }
+})
 
 
 
@@ -11,5 +17,5 @@ $(function () {
 });
 
 function InitData_Edit() {
-    
+    BugEditVueData.$data.bugInfo = BUGINFO;
 }

@@ -3,4 +3,4 @@
  */
 
 
-var bugInfo={};
+var BUGINFO={};

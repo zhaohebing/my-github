@@ -5,7 +5,7 @@
         <div class="module-head">
             <h3>BUG追踪</h3>
         </div>
-        <div class="module-body">
+        <div class="module-body" id="bugEditApp">
 
             <!--<div class="alert">-->
                 <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
@@ -26,21 +26,21 @@
                 <div class="control-group">
                     <label class="control-label" >BUG标题</label>
                     <div class="controls">
-                        <input type="text"  placeholder="简单描述bug" class="span8">
+                        <input type="text"  placeholder="简单描述bug" class="span8" v-model="bugInfo.bugTitle">
                         <span class="help-inline">将在bug页面直接展示</span>
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" >BUG描述</label>
                     <div class="controls">
-                        <textarea class="span8" rows="5"></textarea>
+                        <textarea class="span8" rows="5" v-model="bugInfo.bugDesc"></textarea>
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" >BUG创建者</label>
                     <div class="controls">
-                        <input type="text"  placeholder="孙楠楠" class="span8" disabled>
+                        <input type="text"  placeholder="孙楠楠" class="span8" disabled >
                     </div>
                 </div>
 
@@ -92,7 +92,7 @@
                 <div class="control-group">
                     <label class="control-label" >BUG状态</label>
                     <div class="controls">
-                        <select tabindex="1" data-placeholder="待确认" class="span8">
+                        <select tabindex="1" data-placeholder="待确认" class="span8" >
                             <option value="1">待确认</option>
                             <option value="2">解决中</option>
                             <option value="3">已解决</option>
@@ -104,9 +104,6 @@
                         </select>
                     </div>
                 </div>
-
-
-
 
                 <div class="control-group">
                     <div class="controls">
