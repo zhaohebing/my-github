@@ -20,6 +20,19 @@ public class UserInfoPo {
     String nickName;
     @Column(length = 255)
     String userToken;
+    Integer userType;
+
+    @Override
+    public String toString() {
+        return "UserInfoPo{" +
+                "Id=" + Id +
+                ", userName='" + userName + '\'' +
+                ", userPwd='" + userPwd + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", userToken='" + userToken + '\'' +
+                ", userType=" + userType +
+                '}';
+    }
 
     public Integer getId() {
         return Id;
@@ -61,14 +74,11 @@ public class UserInfoPo {
         this.userToken = userToken;
     }
 
-    @Override
-    public String toString() {
-        return "UserInfoPo{" +
-                "Id=" + Id +
-                ", userName='" + userName + '\'' +
-                ", userPwd='" + userPwd + '\'' +
-                ", nickName='" + nickName + '\'' +
-                ", userToken='" + userToken + '\'' +
-                '}';
+    public Integer getUserType() {
+        return userType;
+    }
+
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 }
