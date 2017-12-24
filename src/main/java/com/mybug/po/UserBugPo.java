@@ -19,22 +19,10 @@ public class UserBugPo {
     Integer bugCreaterId;   //bug创建者
     Integer bugLeaderId;    //bug管理者
     Integer bugSolverId;    //bug解决者
-    Integer bugPriority;    //bug优先级
-    Integer bugType;        //bug类型
-
-    @Override
-    public String toString() {
-        return "UserBugPo{" +
-                "Id=" + Id +
-                ", userId=" + userId +
-                ", bugId='" + bugId + '\'' +
-                ", bugCreaterId=" + bugCreaterId +
-                ", bugLeaderId=" + bugLeaderId +
-                ", bugSolverId=" + bugSolverId +
-                ", bugPriority=" + bugPriority +
-                ", bugType=" + bugType +
-                '}';
-    }
+    @Column(length = 45)
+    String bugPriority;    //bug优先级
+    @Column(length = 45)
+    String bugType;        //bug类型
 
     public Integer getId() {
         return Id;
@@ -84,19 +72,33 @@ public class UserBugPo {
         this.bugSolverId = bugSolverId;
     }
 
-    public Integer getBugPriority() {
+    public String getBugPriority() {
         return bugPriority;
     }
 
-    public void setBugPriority(Integer bugPriority) {
+    public void setBugPriority(String bugPriority) {
         this.bugPriority = bugPriority;
     }
 
-    public Integer getBugType() {
+    public String getBugType() {
         return bugType;
     }
 
-    public void setBugType(Integer bugType) {
+    public void setBugType(String bugType) {
         this.bugType = bugType;
+    }
+
+    @Override
+    public String toString() {
+        return "UserBugPo{" +
+                "Id=" + Id +
+                ", userId=" + userId +
+                ", bugId='" + bugId + '\'' +
+                ", bugCreaterId=" + bugCreaterId +
+                ", bugLeaderId=" + bugLeaderId +
+                ", bugSolverId=" + bugSolverId +
+                ", bugPriority='" + bugPriority + '\'' +
+                ", bugType='" + bugType + '\'' +
+                '}';
     }
 }

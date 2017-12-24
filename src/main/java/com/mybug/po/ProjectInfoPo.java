@@ -16,7 +16,8 @@ public class ProjectInfoPo {
     Integer projectCreaterId;   //项目创建者id
     @Column(nullable = false)
     Date projectCreatedTime;    //项目创建时间
-    Integer projectStatus;      //项目状态
+    @Column(length = 45,nullable = false)
+    String projectStatus;      //项目状态
 
     @Override
     public String toString() {
@@ -25,7 +26,7 @@ public class ProjectInfoPo {
                 ", projecrName='" + projecrName + '\'' +
                 ", projectCreaterId=" + projectCreaterId +
                 ", projectCreatedTime=" + projectCreatedTime +
-                ", projectStatus=" + projectStatus +
+                ", projectStatus='" + projectStatus + '\'' +
                 '}';
     }
 
@@ -61,11 +62,11 @@ public class ProjectInfoPo {
         this.projectCreatedTime = projectCreatedTime;
     }
 
-    public Integer getProjectStatus() {
+    public String getProjectStatus() {
         return projectStatus;
     }
 
-    public void setProjectStatus(Integer projectStatus) {
+    public void setProjectStatus(String projectStatus) {
         this.projectStatus = projectStatus;
     }
 }

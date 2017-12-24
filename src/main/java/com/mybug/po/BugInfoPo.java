@@ -16,7 +16,7 @@ public class BugInfoPo {
     String Id;
     @Column(length = 255)
     String bugDesc;         //bug描述
-    Integer bugStatus = 0;  //bug状态0：创建，1：未分配，2：已分配，3：解决中，4：结束，5：重启，6：失败
+    String bugStatus;      //bug状态
     @Column(length = 255)
     String bugImages;       //bug图片
     @Column(nullable = false)
@@ -25,22 +25,22 @@ public class BugInfoPo {
     Date bugEndTiem;        //bug结束时间
     Date bugRestartTime;    //bug重启时间
     Date bugReEndTime;      //bug重启结束时间
-    @Column(nullable = false)
-    Integer bugPriority;    //bug优先级
+    @Column(length = 45,nullable = false)
+    String bugPriority;    //bug优先级
 
     @Override
     public String toString() {
         return "BugInfoPo{" +
                 "Id='" + Id + '\'' +
                 ", bugDesc='" + bugDesc + '\'' +
-                ", bugStatus=" + bugStatus +
+                ", bugStatus='" + bugStatus + '\'' +
                 ", bugImages='" + bugImages + '\'' +
                 ", bugCreated=" + bugCreated +
                 ", bugUpdate=" + bugUpdate +
                 ", bugEndTiem=" + bugEndTiem +
                 ", bugRestartTime=" + bugRestartTime +
                 ", bugReEndTime=" + bugReEndTime +
-                ", bugPriority=" + bugPriority +
+                ", bugPriority='" + bugPriority + '\'' +
                 '}';
     }
 
@@ -60,11 +60,11 @@ public class BugInfoPo {
         this.bugDesc = bugDesc;
     }
 
-    public Integer getBugStatus() {
+    public String getBugStatus() {
         return bugStatus;
     }
 
-    public void setBugStatus(Integer bugStatus) {
+    public void setBugStatus(String bugStatus) {
         this.bugStatus = bugStatus;
     }
 
@@ -116,11 +116,11 @@ public class BugInfoPo {
         this.bugReEndTime = bugReEndTime;
     }
 
-    public Integer getBugPriority() {
+    public String getBugPriority() {
         return bugPriority;
     }
 
-    public void setBugPriority(Integer bugPriority) {
+    public void setBugPriority(String bugPriority) {
         this.bugPriority = bugPriority;
     }
 }

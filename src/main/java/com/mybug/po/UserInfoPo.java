@@ -19,7 +19,8 @@ public class UserInfoPo {
     String nickName;    //用户姓名
     @Column(length = 255)
     String userToken;
-    Integer userType = 0;   //0：普通用户，1：root用户
+    @Column(length = 45)
+    String userType;   //分为普通用户,root用户
 
     @Override
     public String toString() {
@@ -29,7 +30,7 @@ public class UserInfoPo {
                 ", userPwd='" + userPwd + '\'' +
                 ", nickName='" + nickName + '\'' +
                 ", userToken='" + userToken + '\'' +
-                ", userType=" + userType +
+                ", userType='" + userType + '\'' +
                 '}';
     }
 
@@ -73,11 +74,11 @@ public class UserInfoPo {
         this.userToken = userToken;
     }
 
-    public Integer getUserType() {
+    public String getUserType() {
         return userType;
     }
 
-    public void setUserType(Integer userType) {
+    public void setUserType(String userType) {
         this.userType = userType;
     }
 }

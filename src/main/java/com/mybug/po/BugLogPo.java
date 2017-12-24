@@ -13,7 +13,7 @@ public class BugLogPo {
     Integer Id;
     String bugId;
     String bugDesc;
-    Integer bugStatus;
+    String bugStatus;
     String bugImages;
     Date bugCreated;
     Date bugUpdate;
@@ -23,7 +23,8 @@ public class BugLogPo {
     Integer bugCreaterId;
     Integer bugLeaderId;
     Integer bugSolverId;
-    Integer bugPriority;
+    @Column(length = 45)
+    String bugPriority;
     @Column(nullable = false)
     Date bugOperatingTime;
 
@@ -33,7 +34,7 @@ public class BugLogPo {
                 "Id=" + Id +
                 ", bugId='" + bugId + '\'' +
                 ", bugDesc='" + bugDesc + '\'' +
-                ", bugStatus=" + bugStatus +
+                ", bugStatus='" + bugStatus + '\'' +
                 ", bugImages='" + bugImages + '\'' +
                 ", bugCreated=" + bugCreated +
                 ", bugUpdate=" + bugUpdate +
@@ -43,7 +44,7 @@ public class BugLogPo {
                 ", bugCreaterId=" + bugCreaterId +
                 ", bugLeaderId=" + bugLeaderId +
                 ", bugSolverId=" + bugSolverId +
-                ", bugPriority=" + bugPriority +
+                ", bugPriority='" + bugPriority + '\'' +
                 ", bugOperatingTime=" + bugOperatingTime +
                 '}';
     }
@@ -72,11 +73,11 @@ public class BugLogPo {
         this.bugDesc = bugDesc;
     }
 
-    public Integer getBugStatus() {
+    public String getBugStatus() {
         return bugStatus;
     }
 
-    public void setBugStatus(Integer bugStatus) {
+    public void setBugStatus(String bugStatus) {
         this.bugStatus = bugStatus;
     }
 
@@ -152,11 +153,11 @@ public class BugLogPo {
         this.bugSolverId = bugSolverId;
     }
 
-    public Integer getBugPriority() {
+    public String getBugPriority() {
         return bugPriority;
     }
 
-    public void setBugPriority(Integer bugPriority) {
+    public void setBugPriority(String bugPriority) {
         this.bugPriority = bugPriority;
     }
 

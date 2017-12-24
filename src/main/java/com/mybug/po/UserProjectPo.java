@@ -17,8 +17,9 @@ public class UserProjectPo {
     @Column(nullable = false)
     Integer projectId;  //项目id
     Integer userId;     //用户id
-    Date userAddTime;   //添加用户时间
-    Integer projectStatus;      //项目状态
+    Date userAddTime;   //项目添加用户时间
+    @Column(length = 45)
+    String projectStatus;      //项目状态
 
     @Override
     public String toString() {
@@ -28,7 +29,7 @@ public class UserProjectPo {
                 ", projectId=" + projectId +
                 ", userId=" + userId +
                 ", userAddTime=" + userAddTime +
-                ", projectStatus=" + projectStatus +
+                ", projectStatus='" + projectStatus + '\'' +
                 '}';
     }
 
@@ -72,11 +73,11 @@ public class UserProjectPo {
         this.userAddTime = userAddTime;
     }
 
-    public Integer getProjectStatus() {
+    public String getProjectStatus() {
         return projectStatus;
     }
 
-    public void setProjectStatus(Integer projectStatus) {
+    public void setProjectStatus(String projectStatus) {
         this.projectStatus = projectStatus;
     }
 }
