@@ -12,8 +12,7 @@ import java.util.Date;
 @Entity
 @Table(name = "buginfo")
 public class BugInfoPo {
-    @Id
-    @Column(nullable = false)
+    @Id @Column(nullable = false)
     String Id;
     @Column(length = 255)
     String bugDesc;         //bug描述

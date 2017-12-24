@@ -10,8 +10,7 @@ import java.util.Date;
 @Entity
 @Table(name = "user_project")
 public class UserProjectPo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer Id;
     @Column(nullable = false)
     String projectName; //项目名称
@@ -19,6 +18,7 @@ public class UserProjectPo {
     Integer projectId;  //项目id
     Integer userId;     //用户id
     Date userAddTime;   //添加用户时间
+    Integer projectStatus;      //项目状态
 
     @Override
     public String toString() {
@@ -28,6 +28,7 @@ public class UserProjectPo {
                 ", projectId=" + projectId +
                 ", userId=" + userId +
                 ", userAddTime=" + userAddTime +
+                ", projectStatus=" + projectStatus +
                 '}';
     }
 
@@ -69,5 +70,13 @@ public class UserProjectPo {
 
     public void setUserAddTime(Date userAddTime) {
         this.userAddTime = userAddTime;
+    }
+
+    public Integer getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setProjectStatus(Integer projectStatus) {
+        this.projectStatus = projectStatus;
     }
 }

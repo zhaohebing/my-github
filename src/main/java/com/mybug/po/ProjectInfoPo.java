@@ -9,14 +9,14 @@ import java.util.Date;
 @Entity
 @Table(name = "project_info")
 public class ProjectInfoPo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer Id;
     @Column(nullable = false, unique = true)
     String projecrName;         //项目名字
     Integer projectCreaterId;   //项目创建者id
     @Column(nullable = false)
     Date projectCreatedTime;    //项目创建时间
+    Integer projectStatus;      //项目状态
 
     @Override
     public String toString() {
@@ -25,6 +25,7 @@ public class ProjectInfoPo {
                 ", projecrName='" + projecrName + '\'' +
                 ", projectCreaterId=" + projectCreaterId +
                 ", projectCreatedTime=" + projectCreatedTime +
+                ", projectStatus=" + projectStatus +
                 '}';
     }
 
@@ -58,5 +59,13 @@ public class ProjectInfoPo {
 
     public void setProjectCreatedTime(Date projectCreatedTime) {
         this.projectCreatedTime = projectCreatedTime;
+    }
+
+    public Integer getProjectStatus() {
+        return projectStatus;
+    }
+
+    public void setProjectStatus(Integer projectStatus) {
+        this.projectStatus = projectStatus;
     }
 }

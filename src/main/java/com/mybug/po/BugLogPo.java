@@ -1,8 +1,6 @@
 package com.mybug.po;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -11,9 +9,8 @@ import java.util.Date;
 @Entity
 @Table(name = "bug_log")
 public class BugLogPo {
-    @javax.persistence.Id
-    @Column(nullable = false)
-    String Id;
+    @javax.persistence.Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(nullable = false)
+    Integer Id;
     String bugId;
     String bugDesc;
     Integer bugStatus;
@@ -33,7 +30,7 @@ public class BugLogPo {
     @Override
     public String toString() {
         return "BugLogPo{" +
-                "Id='" + Id + '\'' +
+                "Id=" + Id +
                 ", bugId='" + bugId + '\'' +
                 ", bugDesc='" + bugDesc + '\'' +
                 ", bugStatus=" + bugStatus +
@@ -51,11 +48,11 @@ public class BugLogPo {
                 '}';
     }
 
-    public String getId() {
+    public Integer getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         Id = id;
     }
 

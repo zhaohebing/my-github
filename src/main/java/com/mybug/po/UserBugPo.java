@@ -9,8 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_bug")
 public class UserBugPo {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer Id;
     @Column(nullable = false)
     Integer userId;         //user表的用户id
@@ -21,6 +20,7 @@ public class UserBugPo {
     Integer bugLeaderId;    //bug管理者
     Integer bugSolverId;    //bug解决者
     Integer bugPriority;    //bug优先级
+    Integer bugType;        //bug类型
 
     @Override
     public String toString() {
@@ -32,6 +32,7 @@ public class UserBugPo {
                 ", bugLeaderId=" + bugLeaderId +
                 ", bugSolverId=" + bugSolverId +
                 ", bugPriority=" + bugPriority +
+                ", bugType=" + bugType +
                 '}';
     }
 
@@ -89,5 +90,13 @@ public class UserBugPo {
 
     public void setBugPriority(Integer bugPriority) {
         this.bugPriority = bugPriority;
+    }
+
+    public Integer getBugType() {
+        return bugType;
+    }
+
+    public void setBugType(Integer bugType) {
+        this.bugType = bugType;
     }
 }

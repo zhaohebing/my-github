@@ -9,8 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "user_info")
 public class UserInfoPo {
-    @javax.persistence.Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer Id;         //主键
     @Column(length = 45,nullable = false, unique = true)
     String userName;    //用户名
