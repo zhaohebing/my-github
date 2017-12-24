@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserInfoRepository extends JpaRepository<UserInfoPo,Integer>{
-    UserInfoPo findById(Integer id);
+    UserInfoPo findByUserName(String userName);
 }
