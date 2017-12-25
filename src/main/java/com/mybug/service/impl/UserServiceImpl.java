@@ -51,6 +51,7 @@ public class UserServiceImpl implements UserService {
             }
             userMap.put("userType", user.getUserType());
             userMap.put("userId",user.getId());
+            userMap.put("userName",user.getUserName());
             userMap.put("userProject",projectMap);
             return ResultUtil.success(userMap);
         } else {
