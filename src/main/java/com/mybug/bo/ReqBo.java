@@ -11,12 +11,16 @@ public class ReqBo {
 
     private List<MultipartFile> files;
     String test;
+    String userName;    //用户名
+    String userPwd;     //用户密码
 
     @Override
     public String toString() {
         return "ReqBo{" +
                 "files=" + files +
                 ", test='" + test + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userPwd='" + userPwd + '\'' +
                 '}';
     }
 
@@ -34,5 +38,21 @@ public class ReqBo {
 
     public void setTest(String test) {
         this.test = test;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserPwd() {
+        return userPwd;
+    }
+
+    public void setUserPwd(String userPwd) {
+        this.userPwd = userPwd;
     }
 }
