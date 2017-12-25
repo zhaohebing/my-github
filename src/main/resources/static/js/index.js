@@ -8,7 +8,7 @@
  */
 var token = GetToken();
 if(token == "" ||token == undefined){
-    window.location.href = "login.html";
+    window.location.href = "html/login.html";
 }
 var TestbugTableDataList =[
     {id:"11",bugTitle:"登录页面BUG1",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"1",bugFlag:"1",bugSrc:"/src/img.ipg",bugType:"1"},

@@ -36,10 +36,10 @@ $('input[type="button"]').click(function () {
         }, 500);
 
         //TODO
-        SetToken("1123");
-        window.location.href='index.html';
+        // SetToken("1123");
+        // window.location.href='index.html';
 
-        AJAX("/clogin","post",{userName:login,userPswd:pwd},function (rsp) {
+        AJAX({userName:login,userPwd:pwd},"/login",function (rsp) {
             //ajax返回
             //认证完成
             setTimeout(function () {
@@ -63,11 +63,12 @@ $('input[type="button"]').click(function () {
                     $('.success').fadeIn(1000);
                     $('.success').html(rsp);
                     //跳转操作
-                    window.location.href='index.html';
+                    window.location.href='../index.html';
 
-                    SetToken(rsp.data.sessionToken);
-                    SetUserCname(rsp.data.userCname);
-                    SetUserId(rsp.data.userId);
+                    SetToken(rsp.data.userId);
+                    SetUserPro(rsp.data.userProject);
+                    SetUserType(rsp.data.userType);
+                    SetUserName(rsp.data.userName);
                 } else {
                     AjaxErro(rsp.message);
                 }
