@@ -10,7 +10,7 @@ import java.util.Date;
  * Created by Administrator on 2017/12/22.
  */
 @Entity
-@Table(name = "buginfo")
+@Table(name = "bug_info")
 public class BugInfoPo {
     @Id @Column(nullable = false)
     String Id;
