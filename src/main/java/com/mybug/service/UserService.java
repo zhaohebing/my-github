@@ -11,4 +11,6 @@ public interface UserService {
     //UserInfoPo userSave(UserInfoPo userInfoPo);
     //登录
     ResultBo userLogin(ReqBo reqBo);
+    //查询所属bug
+    ResultBo userBug();
 }
