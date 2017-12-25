@@ -41,13 +41,13 @@ public class BugServiceImpl implements BugService {
         try {
             BeanUtils.copyProperties(reqAddBugBo, bugInfoPo);
             BeanUtils.copyProperties(reqAddBugBo, userBugPo);
-            bugInfoPo.setId(String.valueOf(id));
+            bugInfoPo.setId(id);
             bugInfoPo.setBugCreated(new Date());
             BugInfoPo bugReuslt = bugRepository.save(bugInfoPo);
             System.out.println(bugReuslt);
             long bugId = idUtil.genItemId();
             userBugPo.setBugCreaterId((int)bugId);
-            userBugPo.setBugId(String.valueOf(id));
+            userBugPo.setBugId(id);
             userBugRepository.save(userBugPo);
         } catch (Exception e) {
             e.printStackTrace();
