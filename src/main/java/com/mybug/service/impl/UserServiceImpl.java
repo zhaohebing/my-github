@@ -35,6 +35,7 @@ public class UserServiceImpl implements UserService {
         if (userInfoPo.getUserPwd().equals(user.getUserPwd())) {
             HashMap<Object, Object> userMap = new HashMap<>();
             userMap.put("userType", user.getUserType());
+            userMap.put("userId",user.getId());
             return ResultUtil.success(userMap);
         } else {
             logger.info("密码不匹配");
