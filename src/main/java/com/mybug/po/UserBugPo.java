@@ -14,7 +14,7 @@ public class UserBugPo {
     @Column(nullable = false)
     Integer userId;         //user表的用户id
     @Column(nullable = false)
-    String bugId;           //bug表的id
+    Long bugId;           //bug表的id
     @Column(nullable = false)
     Integer bugCreaterId;   //bug创建者
     Integer bugLeaderId;    //bug管理者
@@ -23,6 +23,20 @@ public class UserBugPo {
     String bugPriority;    //bug优先级
     @Column(length = 45)
     String bugType;        //bug类型
+
+    @Override
+    public String toString() {
+        return "UserBugPo{" +
+                "Id=" + Id +
+                ", userId=" + userId +
+                ", bugId=" + bugId +
+                ", bugCreaterId=" + bugCreaterId +
+                ", bugLeaderId=" + bugLeaderId +
+                ", bugSolverId=" + bugSolverId +
+                ", bugPriority='" + bugPriority + '\'' +
+                ", bugType='" + bugType + '\'' +
+                '}';
+    }
 
     public Integer getId() {
         return Id;
@@ -40,11 +54,11 @@ public class UserBugPo {
         this.userId = userId;
     }
 
-    public String getBugId() {
+    public Long getBugId() {
         return bugId;
     }
 
-    public void setBugId(String bugId) {
+    public void setBugId(Long bugId) {
         this.bugId = bugId;
     }
 
@@ -86,19 +100,5 @@ public class UserBugPo {
 
     public void setBugType(String bugType) {
         this.bugType = bugType;
-    }
-
-    @Override
-    public String toString() {
-        return "UserBugPo{" +
-                "Id=" + Id +
-                ", userId=" + userId +
-                ", bugId='" + bugId + '\'' +
-                ", bugCreaterId=" + bugCreaterId +
-                ", bugLeaderId=" + bugLeaderId +
-                ", bugSolverId=" + bugSolverId +
-                ", bugPriority='" + bugPriority + '\'' +
-                ", bugType='" + bugType + '\'' +
-                '}';
     }
 }

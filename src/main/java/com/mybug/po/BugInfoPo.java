@@ -31,6 +31,7 @@ public class BugInfoPo {
     String bugTitle;         //bug标题
     @Column(length = 45,nullable = false)
     String bugType;          //bug类型
+    Integer projectId;       //bug所属项目
 
 
     @Override
@@ -48,6 +49,7 @@ public class BugInfoPo {
                 ", bugPriority='" + bugPriority + '\'' +
                 ", bugTitle='" + bugTitle + '\'' +
                 ", bugType='" + bugType + '\'' +
+                ", projectId=" + projectId +
                 '}';
     }
 
@@ -145,5 +147,13 @@ public class BugInfoPo {
 
     public void setBugType(String bugType) {
         this.bugType = bugType;
+    }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 }

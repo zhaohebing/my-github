@@ -11,7 +11,7 @@ import java.util.Date;
 public class BugLogPo {
     @javax.persistence.Id @GeneratedValue(strategy = GenerationType.IDENTITY) @Column(nullable = false)
     Integer Id;
-    String bugId;
+    Long bugId;
     String bugDesc;
     String bugStatus;
     String bugImages;
@@ -32,7 +32,7 @@ public class BugLogPo {
     public String toString() {
         return "BugLogPo{" +
                 "Id=" + Id +
-                ", bugId='" + bugId + '\'' +
+                ", bugId=" + bugId +
                 ", bugDesc='" + bugDesc + '\'' +
                 ", bugStatus='" + bugStatus + '\'' +
                 ", bugImages='" + bugImages + '\'' +
@@ -57,11 +57,11 @@ public class BugLogPo {
         Id = id;
     }
 
-    public String getBugId() {
+    public Long getBugId() {
         return bugId;
     }
 
-    public void setBugId(String bugId) {
+    public void setBugId(Long bugId) {
         this.bugId = bugId;
     }
 
