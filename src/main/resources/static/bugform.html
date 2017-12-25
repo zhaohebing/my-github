@@ -1,50 +1,30 @@
-
 <link rel="stylesheet" href="css/upImg.css">
 <div class="content">
     <div class="module">
         <div class="module-head">
             <h3>BUG追踪</h3>
         </div>
-        <div class="module-body">
-
-            <!--<div class="alert">-->
-                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                <!--<strong>Warning!</strong> Something fishy here!-->
-            <!--</div>-->
-            <!--<div class="alert alert-error">-->
-                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                <!--<strong>Oh snap!</strong> Whats wrong with you?-->
-            <!--</div>-->
-            <!--<div class="alert alert-success">-->
-                <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
-                <!--<strong>Well done!</strong> Now you are listening me :)-->
-            <!--</div>-->
-
+        <div class="module-body" id="bugform">
             <br />
-
             <form class="form-horizontal row-fluid">
                 <div class="control-group">
                     <label class="control-label" >BUG标题</label>
                     <div class="controls">
-                        <input type="text"  placeholder="简单描述bug" class="span8">
-                        <!--<span class="help-inline">将在bug页面直接展示</span>-->
+                        <input type="text"  placeholder="简单描述bug" class="span8" v-model="bugTitle">
                     </div>
                 </div>
                 <div class="control-group">
-                    <label class="control-label" >BUG描述</label>
+                    <label class="control-label">BUG描述</label>
                     <div class="controls">
-                        <textarea class="span8" rows="5"></textarea>
+                        <textarea class="span8" rows="5" v-model="bugDesc"></textarea>
                     </div>
                 </div>
-
                 <div class="control-group">
                     <label class="control-label" >BUG创建者</label>
                     <div class="controls">
-                        <input type="text"  placeholder="孙楠楠" class="span8" disabled>
+                        <input type="text" class="span8" disabled v-model="userName">
                     </div>
                 </div>
-
-
                 <div class="control-group">
                     <label class="control-label" >优先级</label>
                     <div class="controls">
@@ -58,11 +38,10 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="control-group">
                     <label class="control-label" >分配给</label>
                     <div class="controls">
-                        <select tabindex="1" data-placeholder="Select here.." class="span8">
+                        <select tabindex="1" data-placeholder="Select here.." class="span8" id="distribution">
                             <option value="">吴晶晶</option>
                             <option value="1">郝彦博</option>
                             <option value="2">田琦</option>
@@ -71,10 +50,9 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="control-group">
                     <label class="control-label">BUG类型</label>
-                    <div class="controls">
+                    <div class="controls" id="bugType">
                         <label class="checkbox inline">
                             <input type="checkbox" value="">
                             接口
@@ -92,7 +70,7 @@
                 <div class="control-group">
                     <label class="control-label" >BUG状态</label>
                     <div class="controls">
-                        <select tabindex="1" data-placeholder="待确认" class="span8">
+                        <select tabindex="1" data-placeholder="待确认" class="span8" id="bugStatus">
                             <option value="1">待确认</option>
                             <option value="2">解决中</option>
                             <option value="3">已解决</option>
@@ -104,16 +82,13 @@
                         </select>
                     </div>
                 </div>
-
                 <div class="control-group">
                     <form id="upBox">
                         <div id="inputBox">
                             <input type="file" title="请选择图片" id="file" multiple accept="image/png,image/jpg,image/gif,image/JPEG" class="btn btn-large btn-primary"/>选择图片</div>
                         <div id="imgBox"></div>
-                        <!--<a id="btn" >上传</a>-->
                     </form>
                 </div>
-
                 <div class="control-group">
                     <div class="controls">
                         <a class="btn btn-large btn-primary" id="bugAddCommit">提交</a>
@@ -122,8 +97,9 @@
             </form>
         </div>
     </div>
-</div><!--/.content-->
+</div>
 <script src="utilJs/uploadImg.js"></script>
+<script src="./js/bugform.js"></script>
 <script>
     imgUpload({
         inputId:'file', //input框id
