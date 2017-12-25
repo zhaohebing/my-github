@@ -48,7 +48,7 @@
 }
 
 .bootstrap-duallistbox-container select {
-  width: 100%;
+  width: 80%;
   height: 300px;
   padding: 0;
 }
@@ -74,5 +74,5 @@
 
 .bootstrap-duallistbox-container.moveonselect .moveall,
 .bootstrap-duallistbox-container.moveonselect .removeall {
-  width: 100%;
+  width: 80%;
 }
