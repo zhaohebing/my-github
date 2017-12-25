@@ -165,7 +165,7 @@ function AJAX(data, url, callbacksuccess) {
         success: function(response) {
             console.log("* 返回值Rsp = 【"+JSON.stringify(response)+"】")
             // screenLog.log("* 返回值Rsp = 【"+JSON.stringify(response)+"】");
-            callbacksuccess(response.data);
+            callbacksuccess(response);
             console.log("*** AJAX - 返回值 - End ***");
         },
         error: function(message) {
@@ -314,27 +314,19 @@ function SetUserName(userName) {
 function GetUserName() {
     return localStorage.getItem("userName");
 }
-//商户名保存
-function SetMerchantName(name) {
-    localStorage.setItem("merchantName",name);
+//用户类型
+function SetUserType(type) {
+    localStorage.setItem("userType",type);
 }
-function GetMerchantName() {
-    return localStorage.getItem("merchantName");
+function GetUserType() {
+    return localStorage.getItem("userType");
 }
-/**
- * 获取会员等级
- * @constructor
- */
-function GetUserLv() {
-    return localStorage.getItem("lv");
+//用户项目
+function SetUserPro(pro) {
+    localStorage.setItem("project",pro);
 }
-/**
- * 保存会员等级
- * @param lv
- * @constructor
- */
-function SetUserLv(lv) {
-    localStorage.setItem("lv",lv);
+function GetUserPro() {
+    return localStorage.getItem("project");
 }
 /**
  * 获取会员认证状态

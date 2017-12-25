@@ -13,7 +13,7 @@ import java.util.Date;
 @Table(name = "bug_info")
 public class BugInfoPo {
     @Id @Column(nullable = false)
-    String Id;
+    Long Id;
     @Column(length = 255)
     String bugDesc;         //bug描述
     String bugStatus;      //bug状态
@@ -36,7 +36,7 @@ public class BugInfoPo {
     @Override
     public String toString() {
         return "BugInfoPo{" +
-                "Id='" + Id + '\'' +
+                "Id=" + Id +
                 ", bugDesc='" + bugDesc + '\'' +
                 ", bugStatus='" + bugStatus + '\'' +
                 ", bugImages='" + bugImages + '\'' +
@@ -51,11 +51,11 @@ public class BugInfoPo {
                 '}';
     }
 
-    public String getId() {
+    public Long getId() {
         return Id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         Id = id;
     }
 
