@@ -1,7 +1,7 @@
 package com.mybug.controller;
 
+import com.mybug.bo.ReqBo;
 import com.mybug.bo.result.ResultBo;
-import com.mybug.po.UserInfoPo;
 import com.mybug.service.impl.UserServiceImpl;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,15 @@ public class UserController {
     @Autowired
     private UserServiceImpl userService;
 
+    /**
+     * 登录
+     * @param reqBo
+     * @param request
+     * @return
+     */
     @PostMapping("login")
     @ResponseBody
-    public ResultBo userSave(UserInfoPo userInfoPo, HttpServletRequest request){
-        return userService.userLogin(userInfoPo);
+    public ResultBo userSave(ReqBo reqBo, HttpServletRequest request){
+        return userService.userLogin(reqBo);
     }
 }
