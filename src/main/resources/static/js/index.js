@@ -6,6 +6,10 @@
  * 测试数据
  * @type {[*]}
  */
+var token = GetToken();
+if(token == "" ||token == undefined){
+    window.location.href = "login.html";
+}
 var TestbugTableDataList =[
     {id:"11",bugTitle:"登录页面BUG1",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"1",bugFlag:"1",bugSrc:"/src/img.ipg",bugType:"1"},
     {id:"22",bugTitle:"登录页面BUG2",bugDesc:"登录页面的密码框缺少校验",bugcreateTime:"2017-12-21",bugStat:"2",bugFlag:"2",bugSrc:"/src/img.ipg",bugType:"2"},
@@ -84,5 +88,12 @@ function InitEve() {
         SetBugStat(bugStat);
         SetBugType(bugType);
         AJAX_JUMP("message.html");
+    });
+
+    $(".projectSelect").click(function () {
+        var text = $(this).text();
+        if(text == "新建项目"){
+            alert("新建项目");
+        }
     });
 }
