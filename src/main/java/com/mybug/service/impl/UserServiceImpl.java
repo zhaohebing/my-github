@@ -1,5 +1,6 @@
 package com.mybug.service.impl;
 
+import com.mybug.bo.ReqBo;
 import com.mybug.bo.result.ResultBo;
 import com.mybug.po.UserInfoPo;
 import com.mybug.repository.UserInfoRepository;
@@ -26,13 +27,13 @@ public class UserServiceImpl implements UserService {
     private UserInfoRepository userInfoRepository;
 
     @Override
-    public ResultBo userLogin(UserInfoPo userInfoPo) {
-        UserInfoPo user = userInfoRepository.findByUserName(userInfoPo.getUserName());
+    public ResultBo userLogin(ReqBo reqBo) {
+        UserInfoPo user = userInfoRepository.findByUserName(reqBo.getUserName());
         logger.info("查到的用户信息：" + user.toString());
         if (user == null) {
             return ResultUtil.faild("1001", "用户不存在");
         }
-        if (userInfoPo.getUserPwd().equals(user.getUserPwd())) {
+        if (reqBo.getUserPwd().equals(user.getUserPwd())) {
             HashMap<Object, Object> userMap = new HashMap<>();
             userMap.put("userType", user.getUserType());
             userMap.put("userId",user.getId());
