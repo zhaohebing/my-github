@@ -27,6 +27,11 @@ public class BugInfoPo {
     Date bugReEndTime;      //bug重启结束时间
     @Column(length = 45,nullable = false)
     String bugPriority;    //bug优先级
+    @Column(length = 45,nullable = false)
+    String bugTitle;         //bug标题
+    @Column(length = 45,nullable = false)
+    String bugType;          //bug类型
+
 
     @Override
     public String toString() {
@@ -41,6 +46,8 @@ public class BugInfoPo {
                 ", bugRestartTime=" + bugRestartTime +
                 ", bugReEndTime=" + bugReEndTime +
                 ", bugPriority='" + bugPriority + '\'' +
+                ", bugTitle='" + bugTitle + '\'' +
+                ", bugType='" + bugType + '\'' +
                 '}';
     }
 
@@ -122,5 +129,21 @@ public class BugInfoPo {
 
     public void setBugPriority(String bugPriority) {
         this.bugPriority = bugPriority;
+    }
+
+    public String getBugTitle() {
+        return bugTitle;
+    }
+
+    public void setBugTitle(String bugTitle) {
+        this.bugTitle = bugTitle;
+    }
+
+    public String getBugType() {
+        return bugType;
+    }
+
+    public void setBugType(String bugType) {
+        this.bugType = bugType;
     }
 }
