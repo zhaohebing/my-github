@@ -151,7 +151,7 @@ function CheckBySelectDiv(divName) {
  * @param done  回调函数
  * @constructor
  */
-function AJAX(data,callbacksuccess) {
+function AJAX(data, url, callbacksuccess) {
     console.log("************ AJAX - 入参 - Begin *********")
     console.log("* 入参Data     = 【"+JSON.stringify(data)+"】")
     console.log("************ AJAX - 入参 - End ***********")
@@ -160,11 +160,7 @@ function AJAX(data,callbacksuccess) {
     // screenLog.log("************ AJAX - 入参 - End ***********");
     $.ajax({
         type: "post",
-        // url: "http://47.95.243.36:8800/getway",
-        // url: "http://127.0.0.1:9090/"+url,
-        //url: "http://172.30.101.249:9999/gateway",
-        // url: "http://127.0.0.1:9090/"+url,
-         url: "/gateway",
+        url : url,
         data: data,
         success: function(response) {
             console.log("* 返回值Rsp = 【"+JSON.stringify(response)+"】")
