@@ -31,6 +31,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserProjectRepository userProjectRepository;
 
+    /**
+     * 登录服务
+     * @param reqBo
+     * @return
+     */
     @Override
     public ResultBo userLogin(ReqBo reqBo) {
         UserInfoPo user = userInfoRepository.findByUserName(reqBo.getUserName());
@@ -51,12 +56,17 @@ public class UserServiceImpl implements UserService {
             }
             userMap.put("userType", user.getUserType());
             userMap.put("userId",user.getId());
-            userMap.put("userName",user.getUserName());
+            userMap.put("nickName",user.getNickName());
             userMap.put("userProject",projectMap);
             return ResultUtil.success(userMap);
         } else {
             logger.info("密码不匹配");
             return ResultUtil.faild("1002", "密码错误");
         }
+    }
+
+    @Override
+    public ResultBo userBug() {
+        return null;
     }
 }
