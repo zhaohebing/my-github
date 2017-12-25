@@ -6,12 +6,13 @@
     <div class="module-option clearfix">
         <div class="pull-left">
             <div class="btn-group">
-                <button class="btn">
+                <button class="btn" id="message-bug-yxj">
                     优先级</button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
+                    <li><a href="#">全部</a></li>
                     <li><a href="#">紧急</a></li>
                     <li><a href="#">正常</a></li>
                     <li><a href="#">一般</a></li>
@@ -20,22 +21,23 @@
                 </ul>
             </div>
             <div class="btn-group">
-                <button class="btn">
+                <button class="btn" id="message-bug-stat" valueId="">
                     状态</button>
                 <button class="btn dropdown-toggle" data-toggle="dropdown">
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu">
-                    <li><a href="#">处理中</a></li>
-                    <li><a href="#">已解决</a></li>
-                    <li><a href="#">已关闭</a></li>
-                    <li><a href="#">未解决</a></li>
+                    <li><a href="#" valueIdStat="0">全部</a></li>
+                    <li><a href="#" valueIdStat="1">处理中</a></li>
+                    <li><a href="#" valueIdStat="2">已解决</a></li>
+                    <li><a href="#" valueIdStat="3">已关闭</a></li>
+                    <li><a href="#" valueIdStat="4">未解决</a></li>
 
-                    <li><a href="#">待确认</a></li>
-                    <li><a href="#">待测试</a></li>
-                    <li><a href="#">测试通过</a></li>
-                    <li><a href="#">测试失败</a></li>
-                    <li><a href="#">已修复</a></li>
+                    <li><a href="#" valueIdStat="5">待确认</a></li>
+                    <li><a href="#" valueIdStat="6">待测试</a></li>
+                    <li><a href="#" valueIdStat="7">测试通过</a></li>
+                    <li><a href="#" valueIdStat="8">测试失败</a></li>
+                    <li><a href="#" valueIdStat="9">已修复</a></li>
                     <!--<li class="divider"></li>-->
                     <!--<li><a href="#">Settings</a></li>-->
                 </ul>
@@ -412,3 +414,4 @@
     <div class="module-foot">
     </div>
 </div>
+<script src="js/message.js"></script>

@@ -416,26 +416,29 @@ function ClearLocalStorage() {
 };
 
 
-//会员状态
+//bug信息
 function SetBugInfo(buginfo) {
     localStorage.setItem("buginfo",buginfo);
 }
 function GetBugInfo() {
     return localStorage.getItem("buginfo");
 }
-//会员类型
-function SetMemberType(memberType) {
-    localStorage.setItem("memberType",memberType);
+//bug类型
+function SetBugType(bugType) {
+    localStorage.setItem("bugType",bugType);
 }
-function GetMemberType() {
-    return localStorage.getItem("memberType");
+function GetBugType() {
+    return localStorage.getItem("bugType");
 }
-/**
- * 获取签名
- * @param str
- * @returns {*}
- * @constructor
- */
+//bug状态
+function SetBugStat(bugStat) {
+    localStorage.setItem("bugStat",bugStat);
+}
+function GetBugStat() {
+    return localStorage.getItem("bugStat");
+}
+
+
 function GetSha256(str,str2) {
     return CryptoJS.HmacSHA256(str,str2).toString();
 }
@@ -443,217 +446,6 @@ function GetSha2(str) {
     return CryptoJS.HmacSHA256(str,"1").toString();
 }
 
-/**
- * 绑定的银行卡查询html片段
- * @param bankTypeNum 银行标示码
- * @param bankNum 卡号
- * @param addflag
- * @returns {string}
- * @constructor
- */
-function GetBankInfo(bankTypeNum,bankNum,addflag) {
-    var bankType = bankTypeNum+".png";
-    var num = "尾号（"+bankNum.substr(bankNum.length-4,4)+"）";
-    var bankFlag = addflag;
-
-
-    var returnInfo = "<li>"+
-        "                    <div class=\"bank \" >"+
-        "                        <div class=\"bankCon\">"+
-        "                            <div class=\"img-bank\">"+
-        "                                <img src=\"../img/banklogo/"+bankType+"\" alt=\"\">"+
-        "                            </div>"+
-        "                            <div class=\"card-word\">"+num+"</div>"+
-        "                            <div class=\"card-word have-border\">"+""+"</div>"+
-        "                            <a href=\"javascript:\" class=\"remove_\" data-toggle=\"modal\" data-target=\"#myModal-remove\">"+
-        "                                <span banknum='"+bankNum+"' class=\"glyphicon glyphicon-trash\" onclick='deleteBankClick.call(this,this)'></span>"+
-        "                            </a>"+
-        "                        </div>"+
-        "                    </div>"+
-        "                </li>";
-
-    return returnInfo;
-}
-function deleteBankClick(b) {
-    deleteBankId = $(this).attr("banknum");
-}
-/**
- *绑定的银行卡查询html片段
- * @type {string}
- */
-var ADDCARD ="<li onclick='addBankCrossClick()'>"+
-    "                    <a class=\"add-bank\" href=\"javascript:\">"+
-    "                        <span><img src=\"../img/add-card.png\" alt=\"\" class=\"add-pic\"></span>"+
-    "                        <span class=\"add-word\">绑定提现账户</span>"+
-    "                        <span class=\"add-word2\">您可以添加1个账户</span>"+
-    "                    </a>"+
-    "                </li>";
-
-/**
- * 交易查询table展示 html片段
- * @param data   交易时间
- * @param name  交易人姓名
- * @param moneyDebit  原金额
- * @param moneyCredit  转换后金额
- * @returns {string}
- * @constructor
- */
-function GetTableTransact(id,type,desc,moneyDebit,moneyCredit,data){
-    var tableTr = "<tr>"+
-        "                        <td>"+id+"</td>"+
-        "                        <td>"+type+"</td>"+
-        "                        <td>"+desc+"</td>"+
-        "                        <td>"+moneyDebit+"</td>"+
-        "                        <td>"+moneyCredit+"</td>"+
-        "                        <td>"+data+"</td>"+
-        "                    </tr>";
-    return tableTr
-}
-/**
- * 收款账户table
- * @param bankName
- * @param routingNum
- * @param accountNum
- * @param receiverName
- * @returns {string}
- * @constructor
- */
-function GetTableSelectShop(bankName,routingNum,accountNum,receiverName) {
-    var selectDesc =
-        "<tbody>"+
-        "<tr>"+
-        "                                            <td>银行名称</td>"+
-        "                                            <td>"+bankName+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>路由（ABA）</td>"+
-        "                                            <td>"+routingNum+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>账号</td>"+
-        "                                            <td>"+accountNum+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>收款人姓名</td>"+
-        "                                            <td>"+receiverName+"</td>"+
-        "                                        </tr>"+
-        "</tbody>";
-
-    return selectDesc;
-}
-function GetTableSelectShopAll(type,bankName,routingNum,accountNum,receiverName) {
-    var selectDesc =
-        "<tbody>"+
-        "                                        <tr>"+
-        "                                            <td>币种</td>"+
-        "                                            <td>"+type+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>银行名称</td>"+
-        "                                            <td>"+bankName+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>路由（ABA）</td>"+
-        "                                            <td>"+routingNum+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>账号</td>"+
-        "                                            <td>"+accountNum+"</td>"+
-        "                                        </tr>"+
-        "                                        <tr>"+
-        "                                            <td>收款人姓名</td>"+
-        "                                            <td>"+receiverName+"</td>"+
-        "                                        </tr>"+
-        "</tbody>";
-
-    return selectDesc;
-}
-/**
- * 商铺列表table
- * @param id
- * @param shopName
- * @param shopMarket
- * @param shopWebsite
- * @returns {string}
- * @constructor
- */
-function GetShopList(id,shopName,shopMarket,shopWebsite,shopid) {
-    var shopList ="<tr>"+
-        "                            <td>"+id+"</td>"+
-        "                            <td>"+shopName+"</td>"+
-        "                            <td>"+shopMarket+"</td>"+
-        "                            <td>"+shopWebsite+"</td>"+
-        "                            <td class='lastTd'>"+
-        "                                <a href=\"javascript:\" class=\"remove_\" data-toggle=\"modal\" data-target=\"#myModal-remove\">"+
-        "                                    <span shopId=\""+shopid+"\" class=\"glyphicon glyphicon-trash\" onclick='deleteClick.call(this,this)'></span>"+
-        "                                </a>"+
-        "                                <a href=\"javascript:\" class=\"editBtn\" data-toggle=\"modal\" data-target=\"#myModal-edit\">"+
-        "                                    <span shopId=\""+shopid+"\" class=\"glyphicon glyphicon-edit\" onclick='editClick.call(this,this)'></span>"+
-        "                                </a>"+
-        "                            </td>"+
-        "                        </tr>";
-
-    return shopList;
-}
-function click_(){
-    $(this).addClass("click_");
-}
-function deleteClick(b){
-    removeId = $(this).attr("shopId");
-}
-function editClick(){
-    editId = $(this).attr("shopId");
-    var shopinf = ShopInfoList[editId];
-
-    // $("#save_selectActiveInitUsd").val("USD GPS 000000002");
-    // if(shopinf.currency == "USD"){
-    //     $(".usd_").removeClass("usd_red");
-    //     $("#usd_class").addClass("usd_red");
-    //     $("#save_selectoptioninit .form-group ").css("display","none");
-    //     $(".select_usd").css("display","block");
-    //     // $("#save_selectShopWeb").val(shopinf.shopMarket);
-    //     $("#save_selectShopWeb").val("123143124USD");
-    //
-    //     // $("#save_selectShopWeb").find("option:selected").text("123123")
-    // }
-    // if(shopinf.currency == "EUR"){
-    //     $(".usd_").removeClass("usd_red");
-    //     $("#eur_class").addClass("usd_red");
-    //     $("#save_selectoptioninit .form-group ").css("display","none");
-    //     $(".select_eur").css("display","block");
-    //     $("#save_selectShopWeb").val(shopinf.shopMarket);
-    // }
-    // if(shopinf.currency == "GBP"){
-    //     $(".usd_").removeClass("usd_red");
-    //     $("#gbp_class").addClass("usd_red");
-    //     $("#save_selectoptioninit .form-group ").css("display","none");
-    //     $(".select_gbp").css("display","block");
-    //     $("#save_selectShopWeb").val(shopinf.shopMarket);
-    // }
-    $("#save_selectShopWeb").val(shopinf.shopMarket);
-
-    $("#save_shopweb").val(shopinf.shopWebsite);
-    $("#save_shopName").val(shopinf.shopName);
-
-    $("#save_input-access").val(shopinf.accessKey);
-    $("#save_input-secret").val(shopinf.secretKey);
-    $("#save_input-seller").val(shopinf.sellerId);
-}
-function GetShopDescInfo(shopMarket,shopWebsite,shopName) {
-    var shopdesc = "<tr>"+
-        "                                        <td>店铺市场</td>"+
-        "                                        <td>"+shopMarket+"</td>"+
-        "                                    </tr>"+
-        "                                    <tr>"+
-        "                                        <td>店铺链接</td>"+
-        "                                        <td>"+shopWebsite+"</td>"+
-        "                                    </tr>"+
-        "                                    <tr>"+
-        "                                        <td>店铺名称</td>"+
-        "                                        <td>"+shopName+"</td>"+
-        "                                    </tr>";
-    return shopdesc;
-}
 function Public_loading() {
     $('body').loading({
         loadingWidth:240,

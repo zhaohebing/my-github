@@ -77,4 +77,12 @@ function InitEve() {
        var jumUrl = $(this).attr("jumpUrl");
        AJAX_JUMP(jumUrl);
     });
+
+    $(".index-li-jump-buginfo").click(function () {
+        var bugType = $(this).attr("bugtype");
+        var bugStat = $(this).attr("bugstat");
+        SetBugStat(bugStat);
+        SetBugType(bugType);
+        AJAX_JUMP("message.html");
+    });
 }
