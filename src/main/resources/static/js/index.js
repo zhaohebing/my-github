@@ -94,6 +94,7 @@ function InitEve() {
         var text = $(this).text();
         if(text == "新建项目"){
             alert("新建项目");
+            AJAX_JUMP("addProject.html")
         }
     });
 }
