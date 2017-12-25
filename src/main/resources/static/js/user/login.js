@@ -68,7 +68,7 @@ $('input[type="button"]').click(function () {
                     SetToken(rsp.data.userId);
                     SetUserPro(rsp.data.userProject);
                     SetUserType(rsp.data.userType);
-                    SetUserName(rsp.data.userName);
+                    SetUserName(rsp.data.nickName);
                 } else {
                     AjaxErro(rsp.message);
                 }
