@@ -35,7 +35,7 @@ $('#bugAddCommit').on('click', function() {
     var data = {
         bugTitle:       bugForm.$data.bugTitle,           //bug标题
         bugDesc:        bugForm.$data.bugDesc,            //bug描述
-        bugCreaterId:   bugForm.$data.userName,           //bug创建者
+        bugCreaterId:   GetUserMemId(),           //bug创建者
         bugPriority:    bugForm.$data.bugPriority,        //bug优先级
         bugSolverId:    bugForm.$data.bugSolver,          //分配给
         bugType:        bugForm.$data.bugType,            //bug类型
