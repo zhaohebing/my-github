@@ -1,6 +1,7 @@
 package com.mybug.service;
 
 import com.mybug.bo.ReqBo;
+import com.mybug.bo.ReqUserBugBo;
 import com.mybug.bo.result.ResultBo;
 
 /**
@@ -12,5 +13,7 @@ public interface UserService {
     //登录
     ResultBo userLogin(ReqBo reqBo);
     //查询所属bug
-    ResultBo userBug();
+    ResultBo userBug(ReqUserBugBo reqUserBugBo);
+    //查询项目下所有用户
+    ResultBo allUserInProject(ReqUserBugBo reqUserBugBo);
 }
