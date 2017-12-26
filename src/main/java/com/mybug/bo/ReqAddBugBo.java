@@ -14,7 +14,6 @@ public class ReqAddBugBo {
     private Integer bugSolverId;    //分配给：
     private String  bugType;      //Bug类型
     private String bugStatus;      //Bug状态
-    private Integer userId;         //用户ID
 
     @Override
     public String toString() {
@@ -26,7 +25,6 @@ public class ReqAddBugBo {
                 ", bugSolverId=" + bugSolverId +
                 ", bugType='" + bugType + '\'' +
                 ", bugStatus='" + bugStatus + '\'' +
-                ", userId=" + userId +
                 '}';
     }
 
@@ -86,11 +84,4 @@ public class ReqAddBugBo {
         this.bugStatus = bugStatus;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
 }
