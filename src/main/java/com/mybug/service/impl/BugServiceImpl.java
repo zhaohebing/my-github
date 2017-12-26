@@ -41,12 +41,16 @@ public class BugServiceImpl implements BugService {
         try {
             BeanUtils.copyProperties(reqAddBugBo, bugInfoPo);
             BeanUtils.copyProperties(reqAddBugBo, userBugPo);
+
+            // 插入Bug表的ID和时间
             bugInfoPo.setId(id);
             bugInfoPo.setBugCreated(new Date());
             BugInfoPo bugReuslt = bugRepository.save(bugInfoPo);
             System.out.println(bugReuslt);
             long bugId = idUtil.genItemId();
             userBugPo.setBugCreaterId((int)bugId);
+            Integer bugCreaterId = reqAddBugBo.getBugCreaterId();
+            userBugPo.setUserId(bugCreaterId);
             userBugPo.setBugId(id);
             userBugRepository.save(userBugPo);
         } catch (Exception e) {

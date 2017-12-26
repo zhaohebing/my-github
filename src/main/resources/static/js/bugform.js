@@ -7,47 +7,47 @@ var bugForm = new Vue({
     data:{
         bugTitle: '',           //bug标题
         bugDesc:  '',           //bug描述
-        userName: '',           //bug创建者
         bugPriority: '',        //bug优先级
         bugSolver: '',          //分配给：
         bugType:   '',          //bug类型
         bugStatus: '',          //bug状态
+        userName: ''            //名字
     },
     methods: {
 
     }
 });
 
+bugForm.$data.userName = GetUserName();
+
 $('#bugAddCommit').on('click', function() {
-    bugForm.$data.bugPriority = $('.dropdown-toggle').text().trim();
     bugForm.$data.bugSolver = $('#distribution').find('option:selected').text();
     bugForm.$data.bugStatus = $('#bugStatus').find('option:selected').text();
-    // var type = [];
-    // for (var i = 0; i < $('#bugType').find('label').length; i ++) {
-    //     console.log($("input[type='checkbox']").is(':checked'));
-    //     console.log(type.push($("input[type='checkbox']").is(':checked')));
-        // type.push($('#bugType').find('label')[i].is(':checked'));
-    // }
-    // console.log(type)
 
     bugForm.$data.bugType = "开放空姐";
+    var userId = Number(GetToken());
 
     var data = {
         bugTitle:       bugForm.$data.bugTitle,           //bug标题
         bugDesc:        bugForm.$data.bugDesc,            //bug描述
-        bugCreaterId:   GetUserMemId(),           //bug创建者
+        bugCreaterId:   userId,                           //bug创建者
         bugPriority:    bugForm.$data.bugPriority,        //bug优先级
-        bugSolverId:    bugForm.$data.bugSolver,          //分配给
+        // bugSolverId:    bugForm.$data.bugSolver,          //分配给
+        bugSolverId:    123,          //分配给
         bugType:        bugForm.$data.bugType,            //bug类型
-        bugStatus:      bugForm.$data.bugStatus,          //bug状态
-        userId:         GetUserMemId()                    //用户ID
+        bugStatus:      bugForm.$data.bugStatus           //bug状态
     };
     AJAX(data, "/bugSave", bugSaveRspe);
 });
-$(function () {
-    bugForm.$data.userName = GetUserName();
+
+$(".dropdown-menu a").click(function(){
+    $(this).parents(".dropdown-menu").siblings("a").find('span').text($(this).text());
+    bugForm.$data.bugPriority = $(this).text();
 });
 
+/**
+ * 新增BUG回调函数
+ */
 function bugSaveRspe(rsp) {
 
 }
