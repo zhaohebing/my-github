@@ -23,6 +23,7 @@ public class UserBugPo {
     String bugPriority;    //bug优先级
     @Column(length = 45)
     String bugType;        //bug类型
+    Integer projectId;      //项目Id
 
     @Override
     public String toString() {
@@ -35,6 +36,7 @@ public class UserBugPo {
                 ", bugSolverId=" + bugSolverId +
                 ", bugPriority='" + bugPriority + '\'' +
                 ", bugType='" + bugType + '\'' +
+                ", projectId=" + projectId +
                 '}';
     }
 
@@ -100,5 +102,13 @@ public class UserBugPo {
 
     public void setBugType(String bugType) {
         this.bugType = bugType;
+    }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 }
